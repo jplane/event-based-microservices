@@ -1,0 +1,17 @@
+SELECT
+    [data.booking.roomId] as [roomId],
+    'highDemandBooking' as [eventType],
+    COUNT(*) as [count],
+    System.Timestamp as [timestamp]
+INTO
+    [escalated-booking-events]
+FROM
+    [raw-events] TIMESTAMP BY [eventTime]
+GROUP BY
+    [data.booking.roomId],
+    [eventType],
+    TumblingWindow(second, 30)
+HAVING
+    [eventType] = 'bookingCreated'
+    AND
+    COUNT(*) > 3
