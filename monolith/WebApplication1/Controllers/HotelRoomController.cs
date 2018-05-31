@@ -37,7 +37,7 @@ namespace WebApplication1.Controllers
 
             var rateGroups = (await db.QueryAsync(rateSql)).GroupBy(rate => rate.RoomId);
 
-            Func<dynamic, bool> rateFilter = r => r.RateClass == "Standard" || r.RateClass == "Premium";
+            Func<dynamic, bool> rateFilter = r => r.Class == "Standard" || r.Class == "Premium";
 
             if (filter == "internal")
             {
@@ -50,7 +50,7 @@ namespace WebApplication1.Controllers
 
                 var rates = group
                               .Where(rateFilter)
-                              .Select(r => new HotelRoomRate { Class = r.RateClass, Price = r.Price })
+                              .Select(r => new HotelRoomRate { Class = r.Class, Price = r.Price })
                               .ToArray();
 
                 rooms[roomId].Prices = rates;
@@ -68,7 +68,7 @@ namespace WebApplication1.Controllers
 
             if (room != null)
             {
-                Func<dynamic, bool> rateFilter = r => r.RateClass == "Standard" || r.RateClass == "Premium";
+                Func<dynamic, bool> rateFilter = r => r.Class == "Standard" || r.Class == "Premium";
 
                 if (filter == "internal")
                 {
@@ -79,7 +79,7 @@ namespace WebApplication1.Controllers
 
                 var rates = (await db.QueryAsync(rateSql, new { id }))
                     .Where(rateFilter)
-                    .Select(r => new HotelRoomRate { Class = r.RateClass, Price = r.Price })
+                    .Select(r => new HotelRoomRate { Class = r.Class, Price = r.Price })
                     .ToArray();
 
                 room.Prices = rates;

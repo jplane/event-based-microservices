@@ -9,7 +9,7 @@ namespace WebApplication1.Models
     {
         public Guid Id { get; set; }
         public int RoomId { get; set; }
-        public DateTime Start { get; set; }
+        public DateTimeOffset Start { get; set; }
         public string Reason { get; set; }
     }
 }
