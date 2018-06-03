@@ -1,0 +1,2970 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "databaseAccounts_mct_hotel_name": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "sites_mct_monolith_name": {
+            "defaultValue": "mct-monolith",
+            "type": "String"
+        },
+        "sites_mct_ms_booking_name": {
+            "defaultValue": "mct-ms-booking",
+            "type": "String"
+        },
+        "sites_mct_mse_booking_name": {
+            "defaultValue": "mct-mse-booking",
+            "type": "String"
+        },
+        "servers_mct_hotel_server_name": {
+            "defaultValue": "mct-hotel-server",
+            "type": "String"
+        },
+        "sites_mct_ms_maintenance_name": {
+            "defaultValue": "mct-ms-maintenance",
+            "type": "String"
+        },
+        "topics_BookingTopic_name": {
+            "defaultValue": "BookingTopic",
+            "type": "String"
+        },
+        "sites_mct_mse_maintenance_name": {
+            "defaultValue": "mct-mse-maintenance",
+            "type": "String"
+        },
+        "serverfarms_mct_ms_app_plan_name": {
+            "defaultValue": "mct-ms-app-plan",
+            "type": "String"
+        },
+        "sites_mct_ms_internalprices_name": {
+            "defaultValue": "mct-ms-internalprices",
+            "type": "String"
+        },
+        "sites_mct_mse_eventrecorder_name": {
+            "defaultValue": "mct-mse-eventrecorder",
+            "type": "String"
+        },
+        "sites_mct_ms_externalprices_name": {
+            "defaultValue": "mct-ms-externalprices",
+            "type": "String"
+        },
+        "sites_mct_mse_internalprices_name": {
+            "defaultValue": "mct-mse-internalprices",
+            "type": "String"
+        },
+        "sites_mct_mse_externalprices_name": {
+            "defaultValue": "mct-mse-externalprices",
+            "type": "String"
+        },
+        "topics_MaintenanceTopic_name": {
+            "defaultValue": "MaintenanceTopic",
+            "type": "String"
+        },
+        "config_web_name": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "storageAccounts_mctmsevents_name": {
+            "defaultValue": "mctmsevents",
+            "type": "String"
+        },
+        "config_web_name_1": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_2": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "databaseAccounts_mct_hotel_name_1": {
+            "defaultValue": "mct-hotel",
+            "type": "String"
+        },
+        "config_web_name_3": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_4": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_5": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_6": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_7": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_8": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_9": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "advisors_DropIndex_name": {
+            "defaultValue": "DropIndex",
+            "type": "String"
+        },
+        "keys_ServiceManaged_name": {
+            "defaultValue": "ServiceManaged",
+            "type": "String"
+        },
+        "advisors_CreateIndex_name": {
+            "defaultValue": "CreateIndex",
+            "type": "String"
+        },
+        "databases_mct_monolith_name": {
+            "defaultValue": "mct-monolith",
+            "type": "String"
+        },
+        "advisors_DefragmentIndex_name": {
+            "defaultValue": "DefragmentIndex",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "advisors_ForceLastGoodPlan_name": {
+            "defaultValue": "ForceLastGoodPlan",
+            "type": "String"
+        },
+        "advisors_DbParameterization_name": {
+            "defaultValue": "DbParameterization",
+            "type": "String"
+        },
+        "encryptionProtector_current_name": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "databases_mct_externalprices_name": {
+            "defaultValue": "mct-externalprices",
+            "type": "String"
+        },
+        "databases_mct_internalprices_name": {
+            "defaultValue": "mct-internalprices",
+            "type": "String"
+        },
+        "firewallRules_AllowAllWindowsAzureIps_name": {
+            "defaultValue": "AllowAllWindowsAzureIps",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_1": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "databases_master_name": {
+            "defaultValue": "master",
+            "type": "String"
+        },
+        "advisors_DropIndex_name_1": {
+            "defaultValue": "DropIndex",
+            "type": "String"
+        },
+        "hostNameBindings_mct_monolith.azurewebsites.net_name": {
+            "defaultValue": "mct-monolith.azurewebsites.net",
+            "type": "String"
+        },
+        "geoBackupPolicies_Default_name": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "advisors_CreateIndex_name_1": {
+            "defaultValue": "CreateIndex",
+            "type": "String"
+        },
+        "hostNameBindings_mct_ms_booking.azurewebsites.net_name": {
+            "defaultValue": "mct-ms-booking.azurewebsites.net",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_5_31_12_32_9_name": {
+            "defaultValue": "ClientIPAddress_2018-5-31_12-32-9",
+            "type": "String"
+        },
+        "advisors_DropIndex_name_2": {
+            "defaultValue": "DropIndex",
+            "type": "String"
+        },
+        "advisors_DropIndex_name_3": {
+            "defaultValue": "DropIndex",
+            "type": "String"
+        },
+        "advisors_DefragmentIndex_name_1": {
+            "defaultValue": "DefragmentIndex",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_2": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "hostNameBindings_mct_mse_booking.azurewebsites.net_name": {
+            "defaultValue": "mct-mse-booking.azurewebsites.net",
+            "type": "String"
+        },
+        "geoBackupPolicies_Default_name_1": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_05_31_12:32:35_name": {
+            "defaultValue": "ClientIPAddress_2018-05-31_12:32:35",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_06_01_02:43:40_name": {
+            "defaultValue": "ClientIPAddress_2018-06-01_02:43:40",
+            "type": "String"
+        },
+        "advisors_CreateIndex_name_2": {
+            "defaultValue": "CreateIndex",
+            "type": "String"
+        },
+        "advisors_CreateIndex_name_3": {
+            "defaultValue": "CreateIndex",
+            "type": "String"
+        },
+        "advisors_ForceLastGoodPlan_name_1": {
+            "defaultValue": "ForceLastGoodPlan",
+            "type": "String"
+        },
+        "transparentDataEncryption_current_name": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "advisors_DbParameterization_name_1": {
+            "defaultValue": "DbParameterization",
+            "type": "String"
+        },
+        "advisors_DefragmentIndex_name_2": {
+            "defaultValue": "DefragmentIndex",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_3": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "advisors_DefragmentIndex_name_3": {
+            "defaultValue": "DefragmentIndex",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_4": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "hostNameBindings_mct_ms_maintenance.azurewebsites.net_name": {
+            "defaultValue": "mct-ms-maintenance.azurewebsites.net",
+            "type": "String"
+        },
+        "geoBackupPolicies_Default_name_2": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "geoBackupPolicies_Default_name_3": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "advisors_ForceLastGoodPlan_name_2": {
+            "defaultValue": "ForceLastGoodPlan",
+            "type": "String"
+        },
+        "advisors_ForceLastGoodPlan_name_3": {
+            "defaultValue": "ForceLastGoodPlan",
+            "type": "String"
+        },
+        "hostNameBindings_mct_mse_maintenance.azurewebsites.net_name": {
+            "defaultValue": "mct-mse-maintenance.azurewebsites.net",
+            "type": "String"
+        },
+        "advisors_DbParameterization_name_2": {
+            "defaultValue": "DbParameterization",
+            "type": "String"
+        },
+        "advisors_DbParameterization_name_3": {
+            "defaultValue": "DbParameterization",
+            "type": "String"
+        },
+        "transparentDataEncryption_current_name_1": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "hostNameBindings_mct_ms_internalprices.azurewebsites.net_name": {
+            "defaultValue": "mct-ms-internalprices.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameBindings_mct_mse_eventrecorder.azurewebsites.net_name": {
+            "defaultValue": "mct-mse-eventrecorder.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameBindings_mct_ms_externalprices.azurewebsites.net_name": {
+            "defaultValue": "mct-ms-externalprices.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameBindings_mct_mse_internalprices.azurewebsites.net_name": {
+            "defaultValue": "mct-mse-internalprices.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameBindings_mct_mse_externalprices.azurewebsites.net_name": {
+            "defaultValue": "mct-mse-externalprices.azurewebsites.net",
+            "type": "String"
+        },
+        "transparentDataEncryption_current_name_2": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "transparentDataEncryption_current_name_3": {
+            "defaultValue": "current",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.DocumentDB/databaseAccounts/mct-hotel'.",
+            "type": "Microsoft.DocumentDB/databaseAccounts",
+            "kind": "MongoDB",
+            "name": "[parameters('databaseAccounts_mct_hotel_name_1')]",
+            "apiVersion": "2015-04-08",
+            "location": "South Central US",
+            "tags": {
+                "defaultExperience": "MongoDB"
+            },
+            "scale": null,
+            "properties": {
+                "databaseAccountOfferType": "Standard",
+                "consistencyPolicy": {
+                    "defaultConsistencyLevel": "Session",
+                    "maxIntervalInSeconds": 5,
+                    "maxStalenessPrefix": 100
+                },
+                "name": "[parameters('databaseAccounts_mct_hotel_name')]"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.EventGrid/topics/BookingTopic'.",
+            "type": "Microsoft.EventGrid/topics",
+            "name": "[parameters('topics_BookingTopic_name')]",
+            "apiVersion": "2018-01-01",
+            "location": "centralus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "endpoint": "[concat('https://bookingtopic.centralus-1.eventgrid.azure.net/api/events')]"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.EventGrid/topics/MaintenanceTopic'.",
+            "type": "Microsoft.EventGrid/topics",
+            "name": "[parameters('topics_MaintenanceTopic_name')]",
+            "apiVersion": "2018-01-01",
+            "location": "centralus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "endpoint": "[concat('https://maintenancetopic.centralus-1.eventgrid.azure.net/api/events')]"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server'.",
+            "type": "Microsoft.Sql/servers",
+            "kind": "v12.0",
+            "name": "[parameters('servers_mct_hotel_server_name')]",
+            "apiVersion": "2015-05-01-preview",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "administratorLogin": "josh",
+                "version": "12.0"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Storage/storageAccounts/mctmsevents'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_mctmsevents_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "southcentralus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "B1",
+                "tier": "Basic",
+                "size": "B1",
+                "family": "B",
+                "capacity": 1
+            },
+            "kind": "app",
+            "name": "[parameters('serverfarms_mct_ms_app_plan_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_mct_ms_app_plan_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-booking'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_mct_ms_booking_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_mct_ms_booking_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_mct_ms_booking_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-maintenance'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_mct_mse_maintenance_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_mct_mse_maintenance_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_mct_mse_maintenance_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-maintenance'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_mct_ms_maintenance_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_mct_ms_maintenance_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_mct_ms_maintenance_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-internalprices'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_mct_mse_internalprices_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_mct_mse_internalprices_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_mct_mse_internalprices_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-externalprices'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_mct_mse_externalprices_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_mct_mse_externalprices_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_mct_mse_externalprices_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-internalprices'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_mct_ms_internalprices_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_mct_ms_internalprices_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_mct_ms_internalprices_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-eventrecorder'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "functionapp",
+            "name": "[parameters('sites_mct_mse_eventrecorder_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_mct_mse_eventrecorder_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_mct_mse_eventrecorder_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 1536,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-monolith'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_mct_monolith_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_mct_monolith_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_mct_monolith_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-externalprices'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_mct_ms_externalprices_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_mct_ms_externalprices_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_mct_ms_externalprices_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-booking'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_mct_mse_booking_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_mct_mse_booking_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_mct_mse_booking_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_mct_ms_app_plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/advisors/CreateIndex'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('advisors_CreateIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/advisors/DropIndex'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('advisors_DropIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/advisors/DbParameterization'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('advisors_DbParameterization_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/advisors/DefragmentIndex'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('advisors_DefragmentIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/advisors/ForceLastGoodPlan'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('advisors_ForceLastGoodPlan_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/auditingPolicies",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('auditingPolicies_Default_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "fullAuditLogsTableName": "SQLDBAuditLogsMcthotelserver",
+                "auditLogsTableName": "Mcthotelserver",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-externalprices'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,user",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_externalprices_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "databaseId": "bd90299d-bc3c-4559-8d59-8cdf1bfbdf88",
+                "edition": "Standard",
+                "status": "Online",
+                "serviceLevelObjective": "S0",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "2147483648",
+                "creationDate": "2018-06-01T16:18:00.143Z",
+                "currentServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+                "requestedServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+                "requestedServiceObjectiveName": "S0",
+                "sampleName": null,
+                "defaultSecondaryLocation": "North Central US",
+                "earliestRestoreDate": "2018-06-01T16:21:06.453Z",
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": null,
+                "zoneRedundant": false,
+                "isUpgradeRequested": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-internalprices'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,user",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_internalprices_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "databaseId": "204bb03f-ca2e-4d04-b51a-3ed416d8dade",
+                "edition": "Standard",
+                "status": "Online",
+                "serviceLevelObjective": "S0",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "2147483648",
+                "creationDate": "2018-06-01T16:21:55.13Z",
+                "currentServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+                "requestedServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+                "requestedServiceObjectiveName": "S0",
+                "sampleName": null,
+                "defaultSecondaryLocation": "North Central US",
+                "earliestRestoreDate": "2018-06-01T16:26:52.423Z",
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": null,
+                "zoneRedundant": false,
+                "isUpgradeRequested": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-monolith'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,user",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_monolith_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "databaseId": "e8965d3b-01ac-49fb-ab82-f7ae3fb72168",
+                "edition": "Standard",
+                "status": "Online",
+                "serviceLevelObjective": "S0",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "2147483648",
+                "creationDate": "2018-05-31T02:03:10.76Z",
+                "currentServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+                "requestedServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+                "requestedServiceObjectiveName": "S0",
+                "sampleName": null,
+                "defaultSecondaryLocation": "North Central US",
+                "earliestRestoreDate": "2018-05-31T02:09:20.067Z",
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": null,
+                "zoneRedundant": false,
+                "isUpgradeRequested": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/firewallRules/AllowAllWindowsAzureIps'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('firewallRules_AllowAllWindowsAzureIps_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "0.0.0.0",
+                "endIpAddress": "0.0.0.0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/firewallRules/ClientIPAddress_2018-05-31_12:32:35'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_05_31_12:32:35_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "107.213.195.90",
+                "endIpAddress": "107.213.195.90"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/firewallRules/ClientIPAddress_2018-06-01_02:43:40'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_06_01_02:43:40_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "129.59.122.53",
+                "endIpAddress": "129.59.122.53"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/firewallRules/ClientIPAddress_2018-5-31_12-32-9'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_5_31_12_32_9_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "174.218.14.255",
+                "endIpAddress": "174.218.14.255"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/encryptionProtector/current'.",
+            "type": "Microsoft.Sql/servers/encryptionProtector",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('encryptionProtector_current_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyName": "ServiceManaged",
+                "serverKeyType": "ServiceManaged"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/keys/ServiceManaged'.",
+            "type": "Microsoft.Sql/servers/keys",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('keys_ServiceManaged_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyType": "[parameters('keys_ServiceManaged_name')]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/master/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_master_name'), '/', parameters('auditingPolicies_Default_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "useServerDefault": "Enabled",
+                "fullAuditLogsTableName": "SQLDBAuditLogsMcthotelserverMaster",
+                "auditLogsTableName": "McthotelserverMaster",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/master/geoBackupPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_master_name'), '/', parameters('geoBackupPolicies_Default_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "state": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/master/transparentDataEncryption/current'.",
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_master_name'), '/', parameters('transparentDataEncryption_current_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "status": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-externalprices/advisors/CreateIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_externalprices_name'), '/', parameters('advisors_CreateIndex_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-externalprices/advisors/DropIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_externalprices_name'), '/', parameters('advisors_DropIndex_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-externalprices/advisors/DbParameterization'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_externalprices_name'), '/', parameters('advisors_DbParameterization_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-externalprices/advisors/DefragmentIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_externalprices_name'), '/', parameters('advisors_DefragmentIndex_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-externalprices/advisors/ForceLastGoodPlan'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_externalprices_name'), '/', parameters('advisors_ForceLastGoodPlan_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-externalprices/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_externalprices_name'), '/', parameters('auditingPolicies_Default_name_3'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "useServerDefault": "Enabled",
+                "fullAuditLogsTableName": "SQLDBAuditLogsMcthotelserverMctexternalprices",
+                "auditLogsTableName": "McthotelserverMctexternalprices",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-externalprices/geoBackupPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_externalprices_name'), '/', parameters('geoBackupPolicies_Default_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "state": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-externalprices/transparentDataEncryption/current'.",
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_externalprices_name'), '/', parameters('transparentDataEncryption_current_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "status": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-internalprices/advisors/CreateIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_internalprices_name'), '/', parameters('advisors_CreateIndex_name_3'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-internalprices/advisors/DropIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_internalprices_name'), '/', parameters('advisors_DropIndex_name_3'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-internalprices/advisors/DbParameterization'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_internalprices_name'), '/', parameters('advisors_DbParameterization_name_3'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-internalprices/advisors/DefragmentIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_internalprices_name'), '/', parameters('advisors_DefragmentIndex_name_3'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-internalprices/advisors/ForceLastGoodPlan'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_internalprices_name'), '/', parameters('advisors_ForceLastGoodPlan_name_3'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-internalprices/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_internalprices_name'), '/', parameters('auditingPolicies_Default_name_4'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "useServerDefault": "Enabled",
+                "fullAuditLogsTableName": "SQLDBAuditLogsMcthotelserverMctinternalprices",
+                "auditLogsTableName": "McthotelserverMctinternalprices",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-internalprices/geoBackupPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_internalprices_name'), '/', parameters('geoBackupPolicies_Default_name_3'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "state": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-internalprices/transparentDataEncryption/current'.",
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_internalprices_name'), '/', parameters('transparentDataEncryption_current_name_3'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "status": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-monolith/advisors/CreateIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_monolith_name'), '/', parameters('advisors_CreateIndex_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_monolith_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-monolith/advisors/DropIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_monolith_name'), '/', parameters('advisors_DropIndex_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_monolith_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-monolith/advisors/DbParameterization'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_monolith_name'), '/', parameters('advisors_DbParameterization_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_monolith_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-monolith/advisors/DefragmentIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_monolith_name'), '/', parameters('advisors_DefragmentIndex_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_monolith_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-monolith/advisors/ForceLastGoodPlan'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_monolith_name'), '/', parameters('advisors_ForceLastGoodPlan_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_monolith_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-monolith/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_monolith_name'), '/', parameters('auditingPolicies_Default_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "useServerDefault": "Enabled",
+                "fullAuditLogsTableName": "SQLDBAuditLogsMcthotelserverMctmonolith",
+                "auditLogsTableName": "McthotelserverMctmonolith",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_monolith_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-monolith/geoBackupPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_monolith_name'), '/', parameters('geoBackupPolicies_Default_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "state": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_monolith_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Sql/servers/mct-hotel-server/databases/mct-monolith/transparentDataEncryption/current'.",
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "name": "[concat(parameters('servers_mct_hotel_server_name'), '/', parameters('databases_mct_monolith_name'), '/', parameters('transparentDataEncryption_current_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "status": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mct_hotel_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mct_hotel_server_name'), parameters('databases_mct_monolith_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-booking/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_mct_ms_booking_name'), '/', parameters('config_web_name_1'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$mct-ms-booking",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.0",
+                "ftpsState": "AllAllowed"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_ms_booking_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-booking/hostNameBindings/mct-ms-booking.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_mct_ms_booking_name'), '/', parameters('hostNameBindings_mct_ms_booking.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "mct-ms-booking",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_ms_booking_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-maintenance/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_mct_mse_maintenance_name'), '/', parameters('config_web_name_4'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$mct-mse-maintenance",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.0",
+                "ftpsState": "AllAllowed"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_mse_maintenance_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-maintenance/hostNameBindings/mct-mse-maintenance.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_mct_mse_maintenance_name'), '/', parameters('hostNameBindings_mct_mse_maintenance.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "mct-mse-maintenance",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_mse_maintenance_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-maintenance/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_mct_ms_maintenance_name'), '/', parameters('config_web_name_3'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$mct-ms-maintenance",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.0",
+                "ftpsState": "AllAllowed"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_ms_maintenance_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-maintenance/hostNameBindings/mct-ms-maintenance.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_mct_ms_maintenance_name'), '/', parameters('hostNameBindings_mct_ms_maintenance.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "mct-ms-maintenance",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_ms_maintenance_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-internalprices/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_mct_mse_internalprices_name'), '/', parameters('config_web_name_8'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$mct-mse-internalprices",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.0",
+                "ftpsState": "AllAllowed"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_mse_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-internalprices/hostNameBindings/mct-mse-internalprices.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_mct_mse_internalprices_name'), '/', parameters('hostNameBindings_mct_mse_internalprices.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "mct-mse-internalprices",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_mse_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-externalprices/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_mct_mse_externalprices_name'), '/', parameters('config_web_name_9'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2017",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$mct-mse-externalprices",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.0",
+                "ftpsState": "AllAllowed"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_mse_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-externalprices/hostNameBindings/mct-mse-externalprices.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_mct_mse_externalprices_name'), '/', parameters('hostNameBindings_mct_mse_externalprices.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "mct-mse-externalprices",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_mse_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-internalprices/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_mct_ms_internalprices_name'), '/', parameters('config_web_name_5'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2017",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$mct-ms-internalprices",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.0",
+                "ftpsState": "AllAllowed"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_ms_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-internalprices/hostNameBindings/mct-ms-internalprices.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_mct_ms_internalprices_name'), '/', parameters('hostNameBindings_mct_ms_internalprices.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "mct-ms-internalprices",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_ms_internalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-eventrecorder/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_mct_mse_eventrecorder_name'), '/', parameters('config_web_name_6'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$mct-mse-eventrecorder",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": true,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": true,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": {
+                    "allowedOrigins": [
+                        "https://functions.azure.com",
+                        "https://functions-staging.azure.com",
+                        "https://functions-next.azure.com"
+                    ]
+                },
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.0",
+                "ftpsState": "AllAllowed"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_mse_eventrecorder_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-eventrecorder/hostNameBindings/mct-mse-eventrecorder.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_mct_mse_eventrecorder_name'), '/', parameters('hostNameBindings_mct_mse_eventrecorder.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "mct-mse-eventrecorder",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_mse_eventrecorder_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-monolith/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_mct_monolith_name'), '/', parameters('config_web_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2017",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$mct-monolith",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.0",
+                "ftpsState": "AllAllowed"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_monolith_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-monolith/hostNameBindings/mct-monolith.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_mct_monolith_name'), '/', parameters('hostNameBindings_mct_monolith.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "mct-monolith",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_monolith_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-externalprices/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_mct_ms_externalprices_name'), '/', parameters('config_web_name_7'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2017",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$mct-ms-externalprices",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.0",
+                "ftpsState": "AllAllowed"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_ms_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-ms-externalprices/hostNameBindings/mct-ms-externalprices.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_mct_ms_externalprices_name'), '/', parameters('hostNameBindings_mct_ms_externalprices.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "mct-ms-externalprices",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_ms_externalprices_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-booking/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_mct_mse_booking_name'), '/', parameters('config_web_name_2'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourcegroups/mct-microservices/providers/Microsoft.Web/serverfarms/mct-ms-app-plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2017",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$mct-mse-booking",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.0",
+                "ftpsState": "AllAllowed"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_mse_booking_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/f481a28d-8509-42c9-aeac-e718d78081f5/resourceGroups/mct-microservices/providers/Microsoft.Web/sites/mct-mse-booking/hostNameBindings/mct-mse-booking.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_mct_mse_booking_name'), '/', parameters('hostNameBindings_mct_mse_booking.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "mct-mse-booking",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_mct_mse_booking_name'))]"
+            ]
+        }
+    ]
+}

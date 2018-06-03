@@ -1,0 +1,246 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "databaseAccounts_mct_hotel_name": {
+            "value": null
+        },
+        "sites_mct_monolith_name": {
+            "value": null
+        },
+        "sites_mct_ms_booking_name": {
+            "value": null
+        },
+        "sites_mct_mse_booking_name": {
+            "value": null
+        },
+        "servers_mct_hotel_server_name": {
+            "value": null
+        },
+        "sites_mct_ms_maintenance_name": {
+            "value": null
+        },
+        "topics_BookingTopic_name": {
+            "value": null
+        },
+        "sites_mct_mse_maintenance_name": {
+            "value": null
+        },
+        "serverfarms_mct_ms_app_plan_name": {
+            "value": null
+        },
+        "sites_mct_ms_internalprices_name": {
+            "value": null
+        },
+        "sites_mct_mse_eventrecorder_name": {
+            "value": null
+        },
+        "sites_mct_ms_externalprices_name": {
+            "value": null
+        },
+        "sites_mct_mse_internalprices_name": {
+            "value": null
+        },
+        "sites_mct_mse_externalprices_name": {
+            "value": null
+        },
+        "topics_MaintenanceTopic_name": {
+            "value": null
+        },
+        "config_web_name": {
+            "value": null
+        },
+        "storageAccounts_mctmsevents_name": {
+            "value": null
+        },
+        "config_web_name_1": {
+            "value": null
+        },
+        "config_web_name_2": {
+            "value": null
+        },
+        "databaseAccounts_mct_hotel_name_1": {
+            "value": null
+        },
+        "config_web_name_3": {
+            "value": null
+        },
+        "config_web_name_4": {
+            "value": null
+        },
+        "config_web_name_5": {
+            "value": null
+        },
+        "config_web_name_6": {
+            "value": null
+        },
+        "config_web_name_7": {
+            "value": null
+        },
+        "config_web_name_8": {
+            "value": null
+        },
+        "config_web_name_9": {
+            "value": null
+        },
+        "advisors_DropIndex_name": {
+            "value": null
+        },
+        "keys_ServiceManaged_name": {
+            "value": null
+        },
+        "advisors_CreateIndex_name": {
+            "value": null
+        },
+        "databases_mct_monolith_name": {
+            "value": null
+        },
+        "advisors_DefragmentIndex_name": {
+            "value": null
+        },
+        "auditingPolicies_Default_name": {
+            "value": null
+        },
+        "advisors_ForceLastGoodPlan_name": {
+            "value": null
+        },
+        "advisors_DbParameterization_name": {
+            "value": null
+        },
+        "encryptionProtector_current_name": {
+            "value": null
+        },
+        "databases_mct_externalprices_name": {
+            "value": null
+        },
+        "databases_mct_internalprices_name": {
+            "value": null
+        },
+        "firewallRules_AllowAllWindowsAzureIps_name": {
+            "value": null
+        },
+        "auditingPolicies_Default_name_1": {
+            "value": null
+        },
+        "databases_master_name": {
+            "value": null
+        },
+        "advisors_DropIndex_name_1": {
+            "value": null
+        },
+        "hostNameBindings_mct_monolith.azurewebsites.net_name": {
+            "value": null
+        },
+        "geoBackupPolicies_Default_name": {
+            "value": null
+        },
+        "advisors_CreateIndex_name_1": {
+            "value": null
+        },
+        "hostNameBindings_mct_ms_booking.azurewebsites.net_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_5_31_12_32_9_name": {
+            "value": null
+        },
+        "advisors_DropIndex_name_2": {
+            "value": null
+        },
+        "advisors_DropIndex_name_3": {
+            "value": null
+        },
+        "advisors_DefragmentIndex_name_1": {
+            "value": null
+        },
+        "auditingPolicies_Default_name_2": {
+            "value": null
+        },
+        "hostNameBindings_mct_mse_booking.azurewebsites.net_name": {
+            "value": null
+        },
+        "geoBackupPolicies_Default_name_1": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_05_31_12:32:35_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_06_01_02:43:40_name": {
+            "value": null
+        },
+        "advisors_CreateIndex_name_2": {
+            "value": null
+        },
+        "advisors_CreateIndex_name_3": {
+            "value": null
+        },
+        "advisors_ForceLastGoodPlan_name_1": {
+            "value": null
+        },
+        "transparentDataEncryption_current_name": {
+            "value": null
+        },
+        "advisors_DbParameterization_name_1": {
+            "value": null
+        },
+        "advisors_DefragmentIndex_name_2": {
+            "value": null
+        },
+        "auditingPolicies_Default_name_3": {
+            "value": null
+        },
+        "advisors_DefragmentIndex_name_3": {
+            "value": null
+        },
+        "auditingPolicies_Default_name_4": {
+            "value": null
+        },
+        "hostNameBindings_mct_ms_maintenance.azurewebsites.net_name": {
+            "value": null
+        },
+        "geoBackupPolicies_Default_name_2": {
+            "value": null
+        },
+        "geoBackupPolicies_Default_name_3": {
+            "value": null
+        },
+        "advisors_ForceLastGoodPlan_name_2": {
+            "value": null
+        },
+        "advisors_ForceLastGoodPlan_name_3": {
+            "value": null
+        },
+        "hostNameBindings_mct_mse_maintenance.azurewebsites.net_name": {
+            "value": null
+        },
+        "advisors_DbParameterization_name_2": {
+            "value": null
+        },
+        "advisors_DbParameterization_name_3": {
+            "value": null
+        },
+        "transparentDataEncryption_current_name_1": {
+            "value": null
+        },
+        "hostNameBindings_mct_ms_internalprices.azurewebsites.net_name": {
+            "value": null
+        },
+        "hostNameBindings_mct_mse_eventrecorder.azurewebsites.net_name": {
+            "value": null
+        },
+        "hostNameBindings_mct_ms_externalprices.azurewebsites.net_name": {
+            "value": null
+        },
+        "hostNameBindings_mct_mse_internalprices.azurewebsites.net_name": {
+            "value": null
+        },
+        "hostNameBindings_mct_mse_externalprices.azurewebsites.net_name": {
+            "value": null
+        },
+        "transparentDataEncryption_current_name_2": {
+            "value": null
+        },
+        "transparentDataEncryption_current_name_3": {
+            "value": null
+        }
+    }
+}
