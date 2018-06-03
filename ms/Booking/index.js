@@ -5,7 +5,12 @@ const uuid = require('uuidv4');
 const axios = require('axios');
 require('dotenv').config();
 
-mongoose.connect(process.env.DB_CONNECTION);
+mongoose.connect(process.env.DB_CONNECTION, {
+    auth: {
+      user: process.env.DB_USER,
+      password: process.env.DB_PWD
+    }
+  });
 
 const bookingSchema = new mongoose.Schema({
     id: 'string',
@@ -24,7 +29,7 @@ const app = express();
 
 app.use(express.json());
 
-app.post('/api/room/book', (req, res) => {
+app.post('/booking/create', (req, res) => {
     Booking.create({
         id: uuid(),
         roomId: req.body.roomId,
@@ -45,12 +50,12 @@ app.post('/api/room/book', (req, res) => {
             await axios.patch(process.env.AVAILABILITY_ENDPOINT_INTERNAL, data)
                        .then(() => axios.patch(process.env.AVAILABILITY_ENDPOINT_EXTERNAL, data))
                        .then(() => res.send(b.id))
-                       .catch(e => res.status(500).send(e));
+                       .catch(e => res.status(500).send(e.message));
         }
     });
 });
 
-app.delete('/api/room/book/cancel/:id', (req, res) => {
+app.delete('/booking/cancel/:id', (req, res) => {
     Booking.findOneAndDelete({
         id: req.params.id
     }, async (err, b) => {
@@ -64,7 +69,7 @@ app.delete('/api/room/book/cancel/:id', (req, res) => {
             await axios.patch(process.env.AVAILABILITY_ENDPOINT_INTERNAL, data)
                        .then(() => axios.patch(process.env.AVAILABILITY_ENDPOINT_EXTERNAL, data))
                        .then(() => res.send())
-                       .catch(e => res.status(500).send(e));
+                       .catch(e => res.status(500).send(e.message));
         }
     });
 });

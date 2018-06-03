@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using InternalPricing.Models;
+using ExternalPricing.Models;
 
-namespace InternalPricing.Controllers
+namespace ExternalPricing.Controllers
 {
     [Route("availability")]
     public class AvailabilityController : Controller
@@ -62,6 +62,7 @@ namespace InternalPricing.Controllers
                 var roomId = (int)group.Key;
 
                 var rates = group
+                              .Where(r => r.Class == "Standard" || r.Class == "Premium")
                               .Select(r => new HotelRoomRate { Class = r.Class, Price = r.Price })
                               .ToArray();
 
@@ -76,33 +77,14 @@ namespace InternalPricing.Controllers
             return rooms;
         }
 
-        [HttpPost("update")]
-        public async Task<object> SetAvailability([FromBody] dynamic events)
+        [HttpPatch("update")]
+        public Task SetAvailability([FromBody] dynamic body)
         {
             var db = GetDatabase();
 
-            foreach (var evt in events)
-            {
-                if (evt.eventType == "Microsoft.EventGrid.SubscriptionValidationEvent")
-                {
-                    return new { validationResponse = (string)evt.data.validationCode };
-                }
+            var args = new { id = (int) body.id, available = body.available == "true" ? 1 : 0 };
 
-                object args = null;
-
-                if (evt.eventType == "bookingCreated" || evt.eventType == "bookingCanceled")
-                {
-                    args = new { id = (int) evt.data.booking.roomId, available = evt.eventType == "bookingCreated" ? 0 : 1 };
-                }
-                else if (evt.eventType == "maintenanceTicketCreated" || evt.eventType == "maintenanceTicketCompleted")
-                {
-                    args = new { id = (int) evt.data.ticket.roomId, available = evt.eventType == "maintenanceTicketCreated" ? 0 : 1 };
-                }
-
-                await db.ExecuteAsync("UPDATE [dbo].[HotelRoom] SET [Available] = @available WHERE [Id] = @id", args);
-            }
-
-            return null;
+            return db.ExecuteAsync("UPDATE [dbo].[HotelRoom] SET [Available] = @available WHERE [Id] = @id", args);
         }
     }
 }

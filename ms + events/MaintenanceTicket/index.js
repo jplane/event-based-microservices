@@ -5,7 +5,12 @@ const uuid = require('uuidv4');
 const axios = require('axios');
 require('dotenv').config();
 
-mongoose.connect(process.env.DB_CONNECTION);
+mongoose.connect(process.env.DB_CONNECTION, {
+    auth: {
+      user: process.env.DB_USER,
+      password: process.env.DB_PWD
+    }
+  });
 
 const maintenanceTicketSchema = new mongoose.Schema({
     id: 'string',
@@ -20,7 +25,7 @@ const app = express();
 
 app.use(express.json());
 
-app.post('/api/room/maintenance', (req, res) => {
+app.post('/maintenance/create', (req, res) => {
     MaintenanceTicket.create({
         id: uuid(),
         roomId: req.body.roomId,
@@ -53,13 +58,13 @@ app.post('/api/room/maintenance', (req, res) => {
                 await axios.post(process.env.MAINTENANCE_TOPIC_ENDPOINT, evts, opts);
                 res.send(t.id);
             } catch (e) {
-                res.status(500).send(e);
+                res.status(500).send(e.message);
             }
         }
     });
 });
 
-app.delete('/api/room/maintenance/complete/:id', (req, res) => {
+app.delete('/maintenance/remove/:id', (req, res) => {
     MaintenanceTicket.findOneAndDelete({
         id: req.params.id
     }, async (err, t) => {
@@ -89,7 +94,7 @@ app.delete('/api/room/maintenance/complete/:id', (req, res) => {
                 await axios.post(process.env.MAINTENANCE_TOPIC_ENDPOINT, evts, opts);
                 res.send(t.id);
             } catch (e) {
-                res.status(500).send(e);
+                res.status(500).send(e.message);
             }
         }
     });
